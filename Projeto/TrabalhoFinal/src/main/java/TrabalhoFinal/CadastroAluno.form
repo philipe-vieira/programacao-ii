@@ -28,11 +28,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButtonCadastrar" min="-2" pref="100" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+          </Group>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabelMatricula" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldMatricula" min="-2" pref="90" max="-2" attributes="0"/>
                   <Component id="jLabelNome" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldNome" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
@@ -40,7 +44,7 @@
                           <Component id="jLabelCPF" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelIdade" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jFormattedTextCPF" alignment="0" pref="100" max="32767" attributes="0"/>
-                          <Component id="jFormattedTextFieldIdade" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jFieldIdade" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -52,13 +56,9 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Component id="jFieldMatricula" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButtonCadastrar" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,8 +68,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabelMatricula" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTextFieldMatricula" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jFieldMatricula" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="jLabelNome" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTextFieldNome" min="-2" max="-2" attributes="0"/>
@@ -91,7 +91,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jFormattedTextTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jFormattedTextFieldIdade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jFieldIdade" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="29" max="32767" attributes="0"/>
               <Component id="jButtonCadastrar" min="-2" pref="35" max="-2" attributes="0"/>
@@ -105,11 +105,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Matricula"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldMatricula">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldMatriculaActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelNome">
       <Properties>
@@ -142,6 +137,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCadastrarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jFormattedTexTDataNascimento">
       <Properties>
@@ -172,15 +170,22 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextCPFActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldIdade">
+    <Component class="javax.swing.JFormattedTextField" name="jFieldIdade">
       <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="###" subtype="-1" type="5"/>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format format="#0" subtype="-1" type="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextFieldIdadeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldIdadeActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="jFieldMatricula">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format format="#" subtype="-1" type="0"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

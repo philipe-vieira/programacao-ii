@@ -10,14 +10,15 @@ package TrabalhoFinal;
  * @author Philipe
  */
 public class CadastroAluno extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form CadastroAluno
+     * Construtores da Classe CadastroAluno
      */
     public CadastroAluno() {
         initComponents();
     }
-
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,7 +29,6 @@ public class CadastroAluno extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelMatricula = new javax.swing.JLabel();
-        jTextFieldMatricula = new javax.swing.JTextField();
         jLabelNome = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
         jLabelCPF = new javax.swing.JLabel();
@@ -39,7 +39,8 @@ public class CadastroAluno extends javax.swing.JFrame {
         jFormattedTexTDataNascimento = new javax.swing.JFormattedTextField();
         jFormattedTextTelefone = new javax.swing.JFormattedTextField();
         jFormattedTextCPF = new javax.swing.JFormattedTextField();
-        jFormattedTextFieldIdade = new javax.swing.JFormattedTextField();
+        jFieldIdade = new javax.swing.JFormattedTextField();
+        jFieldMatricula = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Aluno(a)");
@@ -47,12 +48,6 @@ public class CadastroAluno extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabelMatricula.setText("Matricula");
-
-        jTextFieldMatricula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldMatriculaActionPerformed(evt);
-            }
-        });
 
         jLabelNome.setText("Nome");
 
@@ -65,6 +60,11 @@ public class CadastroAluno extends javax.swing.JFrame {
         jLabelTelefone.setText("Telefone");
 
         jButtonCadastrar.setText("Cadastrar");
+        jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastrarActionPerformed(evt);
+            }
+        });
 
         try {
             jFormattedTexTDataNascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -96,26 +96,27 @@ public class CadastroAluno extends javax.swing.JFrame {
             }
         });
 
-        try {
-            jFormattedTextFieldIdade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jFormattedTextFieldIdade.addActionListener(new java.awt.event.ActionListener() {
+        jFieldIdade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        jFieldIdade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextFieldIdadeActionPerformed(evt);
+                jFieldIdadeActionPerformed(evt);
             }
         });
+
+        jFieldMatricula.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#"))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelMatricula)
-                    .addComponent(jTextFieldMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelNome)
                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -123,19 +124,16 @@ public class CadastroAluno extends javax.swing.JFrame {
                             .addComponent(jLabelCPF)
                             .addComponent(jLabelIdade)
                             .addComponent(jFormattedTextCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jFormattedTextFieldIdade))
+                            .addComponent(jFieldIdade))
                         .addGap(70, 70, 70)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelTelefone)
                             .addComponent(jFormattedTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jFormattedTexTDataNascimento, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelnNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jLabelnNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jFieldMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(131, 131, 131))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +141,7 @@ public class CadastroAluno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabelMatricula)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jFieldMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -163,7 +161,7 @@ public class CadastroAluno extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jFormattedTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -171,10 +169,6 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMatriculaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldMatriculaActionPerformed
 
     private void jFormattedTexTDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTexTDataNascimentoActionPerformed
         // TODO add your handling code here:
@@ -184,9 +178,27 @@ public class CadastroAluno extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextCPFActionPerformed
 
-    private void jFormattedTextFieldIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldIdadeActionPerformed
+    private void jFieldIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldIdadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextFieldIdadeActionPerformed
+    }//GEN-LAST:event_jFieldIdadeActionPerformed
+
+    private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
+              
+        // TODO add your handling code here:
+        
+        // Criação do objeto aluno
+        JavaBeanAluno aluno = new JavaBeanAluno();
+        
+        // Atribuir valores dos campos às variaveis
+        // Obs.: função Integer.parseInt() converte em inteiro
+        aluno.setMatricula(Integer.parseInt(jFieldMatricula.getText()) );
+        aluno.setNome(jTextFieldNome.getText());
+        aluno.setCpf(jFormattedTextCPF.getText());
+        aluno.setDataNascimento(jFormattedTexTDataNascimento.getText());
+        aluno.setTelefone(jFormattedTextTelefone.getText());
+        aluno.setIdade(Integer.parseInt(jFieldIdade.getText()));
+        
+    }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,9 +237,10 @@ public class CadastroAluno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar;
+    private javax.swing.JFormattedTextField jFieldIdade;
+    private javax.swing.JFormattedTextField jFieldMatricula;
     private javax.swing.JFormattedTextField jFormattedTexTDataNascimento;
     private javax.swing.JFormattedTextField jFormattedTextCPF;
-    private javax.swing.JFormattedTextField jFormattedTextFieldIdade;
     private javax.swing.JFormattedTextField jFormattedTextTelefone;
     private javax.swing.JLabel jLabelCPF;
     private javax.swing.JLabel jLabelIdade;
@@ -235,7 +248,6 @@ public class CadastroAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelTelefone;
     private javax.swing.JLabel jLabelnNascimento;
-    private javax.swing.JTextField jTextFieldMatricula;
     private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 }

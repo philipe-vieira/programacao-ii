@@ -16,6 +16,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        CadastroAluno tela = new CadastroAluno();
+        
+        tela.setVisible(true);
     }
     
 }

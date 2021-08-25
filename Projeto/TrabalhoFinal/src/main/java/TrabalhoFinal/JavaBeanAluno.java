@@ -64,6 +64,4 @@ public class JavaBeanAluno {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-   
-   
 }
