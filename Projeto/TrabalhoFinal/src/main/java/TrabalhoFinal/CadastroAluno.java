@@ -5,12 +5,15 @@
  */
 package TrabalhoFinal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Philipe
  */
 public class CadastroAluno extends javax.swing.JFrame {
-    
+    private ArrayList<JavaBeanAluno> aluno = new ArrayList<JavaBeanAluno>();
+
     /**
      * Creates new form CadastroAluno
      * Construtores da Classe CadastroAluno
@@ -18,7 +21,24 @@ public class CadastroAluno extends javax.swing.JFrame {
     public CadastroAluno() {
         initComponents();
     }
-        
+    
+    public CadastroAluno(ArrayList<JavaBeanAluno> aluno) {
+        this.aluno = aluno;
+        initComponents();
+    }
+    
+    /**
+     * Getters and Setter of Aluno variable
+     * @return 
+     */
+    public ArrayList<JavaBeanAluno> getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(ArrayList<JavaBeanAluno> aluno) {
+        this.aluno = aluno;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -198,6 +218,9 @@ public class CadastroAluno extends javax.swing.JFrame {
         aluno.setTelefone(jFormattedTextTelefone.getText());
         aluno.setIdade(Integer.parseInt(jFieldIdade.getText()));
         
+        System.out.println(this.aluno.get(0));
+        
+        this.aluno.add(aluno);
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     /**

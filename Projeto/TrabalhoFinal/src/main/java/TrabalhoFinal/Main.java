@@ -5,6 +5,8 @@
  */
 package TrabalhoFinal;
 
+import java.util.ArrayList;
+import Telas.CadastroAluno;
 /**
  *
  * @author Philipe
@@ -16,9 +18,16 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        CadastroAluno tela = new CadastroAluno();
-        
+        ArrayList<JavaBeanAluno> aluno = new ArrayList<JavaBeanAluno>();
+
+        // instanciando a tela
+        CadastroAluno tela = new CadastroAluno(null, true);
         tela.setVisible(true);
+        
+        // recupera os dados dos alunos cadastrados
+        aluno = tela.getAluno();
+        
+        System.out.println("Ultimo cadastrado -> "+aluno.get(aluno.size()-1).getNome());
     }
     
 }
