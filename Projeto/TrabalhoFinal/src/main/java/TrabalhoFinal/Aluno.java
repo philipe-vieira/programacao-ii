@@ -9,7 +9,7 @@ package TrabalhoFinal;
  *
  * @author ada
  */
-public class JavaBeanAluno {
+public class Aluno {
    private int matricula;
    private String nome;
    private int idade;

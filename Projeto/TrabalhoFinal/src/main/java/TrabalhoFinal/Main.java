@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList<JavaBeanAluno> aluno = new ArrayList<JavaBeanAluno>();
+        ArrayList<Aluno> aluno = new ArrayList<Aluno>();
 
         // instanciando a tela
         CadastroAluno tela = new CadastroAluno(null, true);
