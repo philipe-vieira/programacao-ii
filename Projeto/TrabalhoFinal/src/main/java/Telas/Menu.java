@@ -10,6 +10,7 @@ package Telas;
  * @author Philipe
  */
 public class Menu extends javax.swing.JDialog {
+    public int escolha = 0;
 
     /**
      * Creates new form Menu
@@ -37,38 +38,77 @@ public class Menu extends javax.swing.JDialog {
         jBtnObterPU = new javax.swing.JButton();
         jBtnSalvar = new javax.swing.JButton();
         jBtnImprimirVelhoNovo = new javax.swing.JButton();
+        jBtnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(200, 300));
+        setTitle("MENU");
+        setFont(new java.awt.Font("Dialog", 0, 8)); // NOI18N
+        setPreferredSize(new java.awt.Dimension(305, 390));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         lblMenu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblMenu.setText("MENU");
 
+        jBtnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnCadastrar.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnCadastrar.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCadastrarActionPerformed(evt);
+            }
+        });
 
+        jBtnConsultar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jBtnConsultar.setText("Consultar Aluno");
         jBtnConsultar.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnConsultar.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnConsultar.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnConsultarActionPerformed(evt);
+            }
+        });
 
+        jBtnInserir.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jBtnInserir.setText("<html>\n<center>\nInserir na \n<br>\n3 pos\n</center>"); // NOI18N
         jBtnInserir.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnInserir.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnInserir.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnInserirActionPerformed(evt);
+            }
+        });
 
+        jBtnObter3Aluno.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jBtnObter3Aluno.setText("<html> <center>Obter Aluno <br> 3 pos </center>"); // NOI18N
         jBtnObter3Aluno.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnObter3Aluno.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnObter3Aluno.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnObter3Aluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnObter3AlunoActionPerformed(evt);
+            }
+        });
 
+        jBtnRemover.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jBtnRemover.setText("Remover (Ultimo)");
         jBtnRemover.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnRemover.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnRemover.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnRemoverActionPerformed(evt);
+            }
+        });
 
+        jBtnObterPU.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jBtnObterPU.setText("<html> <center> Obter Matricula  <br> primeiro e ultimo </center>");
         jBtnObterPU.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnObterPU.setMinimumSize(new java.awt.Dimension(125, 40));
@@ -79,36 +119,65 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
+        jBtnSalvar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jBtnSalvar.setText("Salvar CSV");
         jBtnSalvar.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnSalvar.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnSalvar.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSalvarActionPerformed(evt);
+            }
+        });
 
-        jBtnImprimirVelhoNovo.setText("<html>\n<center>\nImprimir mais velho\n<br>\n e mais novo\n</center>");
+        jBtnImprimirVelhoNovo.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jBtnImprimirVelhoNovo.setText("<html>\n<center>\nImprimir mais velho e mais novo\n</center>");
+        jBtnImprimirVelhoNovo.setActionCommand("<html> <center> Imprimir mais velho  e mais novo </center>");
         jBtnImprimirVelhoNovo.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnImprimirVelhoNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnImprimirVelhoNovoActionPerformed(evt);
+            }
+        });
+
+        jBtnSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBtnSair.setText("SAIR");
+        jBtnSair.setMaximumSize(new java.awt.Dimension(125, 40));
+        jBtnSair.setMinimumSize(new java.awt.Dimension(125, 40));
+        jBtnSair.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnImprimirVelhoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnObterPU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnObter3Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblMenu)
                 .addGap(115, 115, 115))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBtnImprimirVelhoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnObterPU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnObter3Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,15 +200,73 @@ public class Menu extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jBtnImprimirVelhoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 1;
+        this.dispose();
+    }//GEN-LAST:event_jBtnCadastrarActionPerformed
+
+    private void jBtnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultarActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 2;
+        this.dispose();
+    }//GEN-LAST:event_jBtnConsultarActionPerformed
+
+    private void jBtnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnInserirActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 3;
+        this.dispose();
+    }//GEN-LAST:event_jBtnInserirActionPerformed
+
+    private void jBtnObter3AlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnObter3AlunoActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 4;
+        this.dispose();
+    }//GEN-LAST:event_jBtnObter3AlunoActionPerformed
+
+    private void jBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRemoverActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 5;
+        this.dispose();
+    }//GEN-LAST:event_jBtnRemoverActionPerformed
+
     private void jBtnObterPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnObterPUActionPerformed
         // TODO add your handling code here:
+        this.escolha = 6;
+        this.dispose();
     }//GEN-LAST:event_jBtnObterPUActionPerformed
+
+    private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 7;
+        this.dispose();
+    }//GEN-LAST:event_jBtnSalvarActionPerformed
+
+    private void jBtnImprimirVelhoNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImprimirVelhoNovoActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 8;
+        this.dispose();
+    }//GEN-LAST:event_jBtnImprimirVelhoNovoActionPerformed
+
+    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+        // TODO add your handling code here:
+        this.escolha = 0;
+        this.dispose();
+    }//GEN-LAST:event_jBtnSairActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        this.escolha = 0;
+        this.dispose();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -191,6 +318,7 @@ public class Menu extends javax.swing.JDialog {
     private javax.swing.JButton jBtnObter3Aluno;
     private javax.swing.JButton jBtnObterPU;
     private javax.swing.JButton jBtnRemover;
+    private javax.swing.JButton jBtnSair;
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel lblMenu;
     // End of variables declaration//GEN-END:variables
