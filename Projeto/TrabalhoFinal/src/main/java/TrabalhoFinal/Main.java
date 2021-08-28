@@ -8,12 +8,21 @@ package TrabalhoFinal;
 import java.util.ArrayList;
 import Telas.CadastroAluno;
 import Telas.Menu;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Philipe
  */
 public class Main {
 
+    public static void obterPrimeiroUltimo(ArrayList<Aluno> aluno){
+        Aluno primeiro = aluno.get(0);
+        Aluno ultimo = aluno.get(aluno.size()-1);
+        JOptionPane.showInternalMessageDialog(null, 
+                "<html>Primeiro -> "+primeiro.getMatricula()+" - "+primeiro.getNome()
+                +"<br>Ultimo -> "+ultimo.getMatricula()+" - "+ultimo.getNome()+"</html>"
+        );
+    }
     /**
      * @param args the command line arguments
      */   
@@ -38,6 +47,9 @@ public class Main {
                     // recupera os dados dos alunos cadastrados
                     aluno = cadastro.getAluno();
                     break;
+                case 6:
+                    obterPrimeiroUltimo(aluno);
+                    break;
                 default:
                     System.out.println("Opcao invalida");
                     break;
@@ -47,6 +59,7 @@ public class Main {
         if(aluno.size()!=0)
             System.out.println("Ultimo cadastrado -> "+aluno.get(aluno.size()-1).getCpf());
         
+        System.exit(0);
     }
     
 }

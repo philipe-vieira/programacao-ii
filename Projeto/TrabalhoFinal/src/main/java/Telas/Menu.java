@@ -264,8 +264,7 @@ public class Menu extends javax.swing.JDialog {
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
-        this.escolha = 0;
-        this.dispose();
+        
     }//GEN-LAST:event_formWindowClosed
 
     /**
