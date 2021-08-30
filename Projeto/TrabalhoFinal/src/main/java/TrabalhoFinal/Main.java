@@ -5,6 +5,7 @@
  */
 package TrabalhoFinal;
 
+import Telas.BuscarAluno;
 import java.util.ArrayList;
 import Telas.CadastroAluno;
 import Telas.Menu;
@@ -47,9 +48,18 @@ public class Main {
                     // recupera os dados dos alunos cadastrados
                     aluno = cadastro.getAluno();
                     break;
+                    
+                 /*implementando o botão para abrir outra janela, ainda nao funciona
+                 //   irei corrigi o mais rapido possível!
+                case 2:
+                BuscarAluno buscara = new BuscarAluno();
+                buscara.setVisible(true);
+                
+                    break;      Esboço, @danielbricio.*/
                 case 6:
                     obterPrimeiroUltimo(aluno);
                     break;
+                    
                 default:
                     System.out.println("Opcao invalida");
                     break;
@@ -58,6 +68,14 @@ public class Main {
         
         if(aluno.size()!=0)
             System.out.println("Ultimo cadastrado -> "+aluno.get(aluno.size()-1).getCpf());
+        
+        /* criação do Objeto BuscarAluno da Classe Aluno
+        Aluno BuscarAluno = new Aluno();
+        
+        BuscarAluno.getNome();
+        BuscarAluno.getMatricula();
+        Esboço, @danielbricio. */
+        
         
         System.exit(0);
     }
