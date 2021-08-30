@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class CadastroAluno extends javax.swing.JDialog {
     // ArratList para armazenar os cadastros
     private ArrayList<Aluno> aluno = new ArrayList<Aluno>();
+    private boolean insereTerceiro = false;
     
     /**
      * Creates new form CadastroAluno
@@ -24,6 +25,19 @@ public class CadastroAluno extends javax.swing.JDialog {
     public CadastroAluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+    
+    public CadastroAluno(java.awt.Frame parent, boolean modal, ArrayList<Aluno> aluno) {
+        super(parent, modal);
+        initComponents();
+        this.aluno = aluno;
+    }
+    
+    public CadastroAluno(java.awt.Frame parent, boolean modal, ArrayList<Aluno> aluno, boolean terceiro) {
+        super(parent, modal);
+        initComponents();
+        this.aluno = aluno;
+        this.insereTerceiro = terceiro;
     }
 
     /**
@@ -45,6 +59,15 @@ public class CadastroAluno extends javax.swing.JDialog {
         }
         
         return false;
+    }
+    public void insereTerceiro(Aluno aluno){
+        this.aluno.add(2, aluno);
+        // Mostra um pop-up com o nome do aluno cadastrado
+        JOptionPane.showMessageDialog(null, 
+                this.aluno.get(this.aluno.lastIndexOf(aluno)).getNome()
+                +" foi cadastrado na Terceira posicao!"
+        );
+        this.dispose();
     }
     
     /**
@@ -231,11 +254,9 @@ public class CadastroAluno extends javax.swing.JDialog {
                     .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVoltar))
-                    .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVoltar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -270,7 +291,10 @@ public class CadastroAluno extends javax.swing.JDialog {
         aluno.setTelefone(jTextTelefone.getText());
         aluno.setIdade(Integer.parseInt(jTextIdade.getText()));
         
-        
+        if(insereTerceiro){
+            insereTerceiro(aluno);
+            return;
+        }
         
         // Adiciona o cadastro no ArraList de alunos
         this.aluno.add(aluno);

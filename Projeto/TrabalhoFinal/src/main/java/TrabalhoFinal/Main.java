@@ -28,7 +28,7 @@ public class Main {
      */   
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList<Aluno> aluno = new ArrayList<Aluno>();
+        ArrayList<Aluno> listAlunos = new ArrayList<Aluno>();
         
         // instanciando a tela
         Menu mnu = new Menu(null, true);
@@ -45,10 +45,18 @@ public class Main {
                     CadastroAluno cadastro = new CadastroAluno(null, true);
                     cadastro.setVisible(true);
                     // recupera os dados dos alunos cadastrados
-                    aluno = cadastro.getAluno();
+                    listAlunos = cadastro.getAluno();
+                    break;
+                case 3:
+                    // INSERIR NA TERCEIRA POSIÇÃO
+                    // instanciando a tela
+                    CadastroAluno cadastroTerceiro = new CadastroAluno(null, true, listAlunos, true);
+                    cadastroTerceiro.setVisible(true);
+                    // recupera os dados dos alunos cadastrados
+                    listAlunos = cadastroTerceiro.getAluno();
                     break;
                 case 6:
-                    obterPrimeiroUltimo(aluno);
+                    obterPrimeiroUltimo(listAlunos);
                     break;
                 default:
                     System.out.println("Opcao invalida");
@@ -56,9 +64,9 @@ public class Main {
             }
         } while (mnu.escolha != 0);
         
-        if(aluno.size()!=0)
-            System.out.println("Ultimo cadastrado -> "+aluno.get(aluno.size()-1).getCpf());
-        
+        if(listAlunos.size()!=0)
+            System.out.println("Ultimo cadastrado -> "+listAlunos.get(listAlunos.size()-1).getCpf());
+                
         System.exit(0);
     }
     
