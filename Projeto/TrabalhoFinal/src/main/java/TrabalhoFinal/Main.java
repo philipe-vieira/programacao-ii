@@ -8,6 +8,16 @@ package TrabalhoFinal;
 import java.util.ArrayList;
 import Telas.CadastroAluno;
 import Telas.Menu;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
+import java.io.IOException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -23,6 +33,28 @@ public class Main {
                 +"<br>Ultimo -> "+ultimo.getMatricula()+" - "+ultimo.getNome()+"</html>"
         );
     }
+    
+    public static void gerarCsv(ArrayList<Aluno> listAlunos){
+        try {
+            // Criando e abrindo o arquivo
+            Writer writer = Files.newBufferedWriter(Paths.get("ListagemAlunos.csv"));
+            StatefulBeanToCsv<Aluno> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+            // Escrevendo os dados no arquivo
+            beanToCsv.write(listAlunos);
+            // Fechando o arquivo
+            writer.flush();
+            writer.close();
+            // Imprimindo mensagem de sucesso;
+            JOptionPane.showMessageDialog(null, "CSV gerado com sucesso!");
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CsvDataTypeMismatchException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CsvRequiredFieldEmptyException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */   
@@ -58,13 +90,16 @@ public class Main {
                 case 6:
                     obterPrimeiroUltimo(listAlunos);
                     break;
+                case 7:
+                    gerarCsv(listAlunos);
+                    break;
                 default:
                     System.out.println("Opcao invalida");
                     break;
             }
         } while (mnu.escolha != 0);
         
-        if(listAlunos.size()!=0)
+        if(listAlunos.isEmpty())
             System.out.println("Ultimo cadastrado -> "+listAlunos.get(listAlunos.size()-1).getCpf());
                 
         System.exit(0);

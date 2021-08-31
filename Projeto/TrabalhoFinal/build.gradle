@@ -11,4 +11,5 @@ repositories {
 
 dependencies {
     testImplementation     'junit:junit:4.13'
+    implementation group: 'com.opencsv', name: 'opencsv', version: '5.2'
 }
