@@ -206,6 +206,7 @@ public class Menu extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
@@ -307,6 +308,7 @@ public class Menu extends javax.swing.JDialog {
                 dialog.setVisible(true);
             }
         });
+     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -321,4 +323,6 @@ public class Menu extends javax.swing.JDialog {
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel lblMenu;
     // End of variables declaration//GEN-END:variables
+
+   
 }
