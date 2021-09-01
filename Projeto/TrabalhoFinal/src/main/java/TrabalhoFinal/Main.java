@@ -9,6 +9,16 @@ import Telas.BuscarAluno;
 import java.util.ArrayList;
 import Telas.CadastroAluno;
 import Telas.Menu;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
+import java.io.IOException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -24,12 +34,34 @@ public class Main {
                 +"<br>Ultimo -> "+ultimo.getMatricula()+" - "+ultimo.getNome()+"</html>"
         );
     }
+    
+    public static void gerarCsv(ArrayList<Aluno> listAlunos){
+        try {
+            // Criando e abrindo o arquivo
+            Writer writer = Files.newBufferedWriter(Paths.get("ListagemAlunos.csv"));
+            StatefulBeanToCsv<Aluno> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+            // Escrevendo os dados no arquivo
+            beanToCsv.write(listAlunos);
+            // Fechando o arquivo
+            writer.flush();
+            writer.close();
+            // Imprimindo mensagem de sucesso;
+            JOptionPane.showMessageDialog(null, "CSV gerado com sucesso!");
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CsvDataTypeMismatchException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CsvRequiredFieldEmptyException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */   
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList<Aluno> aluno = new ArrayList<Aluno>();
+        ArrayList<Aluno> listAlunos = new ArrayList<Aluno>();
         
         // instanciando a tela
         Menu mnu = new Menu(null, true);
@@ -46,7 +78,15 @@ public class Main {
                     CadastroAluno cadastro = new CadastroAluno(null, true);
                     cadastro.setVisible(true);
                     // recupera os dados dos alunos cadastrados
-                    aluno = cadastro.getAluno();
+                    listAlunos = cadastro.getAluno();
+                    break;
+                case 3:
+                    // INSERIR NA TERCEIRA POSIï¿½ï¿½O
+                    // instanciando a tela
+                    CadastroAluno cadastroTerceiro = new CadastroAluno(null, true, listAlunos, true);
+                    cadastroTerceiro.setVisible(true);
+                    // recupera os dados dos alunos cadastrados
+                    listAlunos = cadastroTerceiro.getAluno();
                     break;
                    
                 case 2:
@@ -55,7 +95,10 @@ public class Main {
                     break;
                     
                 case 6:
-                    obterPrimeiroUltimo(aluno);
+                    obterPrimeiroUltimo(listAlunos);
+                    break;
+                case 7:
+                    gerarCsv(listAlunos);
                     break;
                     
                 default:
@@ -64,15 +107,15 @@ public class Main {
             }
         } while (mnu.escolha != 0);
         
-        if(aluno.size()!=0)
-            System.out.println("Ultimo cadastrado -> "+aluno.get(aluno.size()-1).getCpf());
+        if(listAlunos.isEmpty())
+            System.out.println("Ultimo cadastrado -> "+listAlunos.get(listAlunos.size()-1).getCpf());
         
-        /* criação do Objeto BuscarAluno da Classe Aluno
+        /* criaï¿½ï¿½o do Objeto BuscarAluno da Classe Aluno
         Aluno BuscarAluno = new Aluno();
         
         BuscarAluno.getNome();
         BuscarAluno.getMatricula();
-        Esboço, @danielbricio. */
+        Esboï¿½o, @danielbricio. */
         
         
         System.exit(0);
