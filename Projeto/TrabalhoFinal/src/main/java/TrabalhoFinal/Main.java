@@ -48,14 +48,12 @@ public class Main {
                     // recupera os dados dos alunos cadastrados
                     aluno = cadastro.getAluno();
                     break;
-                    
-                 /*implementando o botão para abrir outra janela, ainda nao funciona
-                 //   irei corrigi o mais rapido possível!
+                   
                 case 2:
-                BuscarAluno buscara = new BuscarAluno();
+                BuscarAluno buscara = new BuscarAluno(null, true);
                 buscara.setVisible(true);
-                
-                    break;      Esboço, @danielbricio.*/
+                    break;
+                    
                 case 6:
                     obterPrimeiroUltimo(aluno);
                     break;

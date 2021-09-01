@@ -5,21 +5,17 @@
  */
 package Telas;
 
-
 /**
  *
  * @author danielbricio
  */
-public class BuscarAluno extends javax.swing.JFrame {
-    
-    
+public class BuscarAluno extends javax.swing.JDialog {
 
     /**
-     * Creates new form BuscarAluno
+     * Creates new form BuscarAluno1
      */
-    
-    //construtor iniciado
-    public BuscarAluno() {
+    public BuscarAluno(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -32,40 +28,36 @@ public class BuscarAluno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabelConsultarAluno = new javax.swing.JLabel();
+        jLabelPorFavor = new javax.swing.JLabel();
+        jLabelNomeDoAluno = new javax.swing.JLabel();
         txtBuscarNomeAluno = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelMatriculaDoAluno = new javax.swing.JLabel();
         txtBuscarMatriculaAluno = new javax.swing.JFormattedTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         btnBuscarAluno = new javax.swing.JButton();
+        btnVoltarAoMenuConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Consultar Aluno");
+        jLabelConsultarAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelConsultarAluno.setText("Consultar Aluno");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Nome do Aluno:");
+        jLabelPorFavor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelPorFavor.setText("Por favor, insira pelo menos um dos dados solicitados para efetuar a buscar!");
 
-        try {
-            txtBuscarMatriculaAluno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtBuscarMatriculaAluno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jLabelNomeDoAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelNomeDoAluno.setText("Nome do Aluno:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Matrícula do Aluno:");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Por favor, insira pelo menos um dos dados solicitados para efetuar a buscar!");
+        jLabelMatriculaDoAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelMatriculaDoAluno.setText("Matrícula do Aluno:");
 
         btnBuscarAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBuscarAluno.setText("Buscar Aluno");
-        btnBuscarAluno.addActionListener(new java.awt.event.ActionListener() {
+
+        btnVoltarAoMenuConsultar.setText("Voltar ao menu ");
+        btnVoltarAoMenuConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarAlunoActionPerformed(evt);
+                btnVoltarAoMenuConsultarActionPerformed(evt);
             }
         });
 
@@ -74,48 +66,54 @@ public class BuscarAluno extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(txtBuscarNomeAluno)
-                    .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabelNomeDoAluno, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelPorFavor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelConsultarAluno, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBuscarMatriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBuscarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelMatriculaDoAluno)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtBuscarMatriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnVoltarAoMenuConsultar)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnBuscarAluno)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jLabelConsultarAluno)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabelPorFavor)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelNomeDoAluno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
+                        .addComponent(jLabelMatriculaDoAluno)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBuscarMatriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnBuscarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(btnBuscarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                    .addComponent(btnVoltarAoMenuConsultar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBuscarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAlunoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarAlunoActionPerformed
+    private void btnVoltarAoMenuConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAoMenuConsultarActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_btnVoltarAoMenuConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,23 +141,30 @@ public class BuscarAluno extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(BuscarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscarAluno().setVisible(true);
+                BuscarAluno dialog = new BuscarAluno(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
-            
         });
-      
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarAluno;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnVoltarAoMenuConsultar;
+    private javax.swing.JLabel jLabelConsultarAluno;
+    private javax.swing.JLabel jLabelMatriculaDoAluno;
+    private javax.swing.JLabel jLabelNomeDoAluno;
+    private javax.swing.JLabel jLabelPorFavor;
     private javax.swing.JFormattedTextField txtBuscarMatriculaAluno;
     private javax.swing.JTextField txtBuscarNomeAluno;
     // End of variables declaration//GEN-END:variables
