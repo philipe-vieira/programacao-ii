@@ -1,4 +1,5 @@
 *.class
+*.csv
 /TrabalhoFinal/.gradle/
 /TesteGradle/.gradle/
 /TrabalhoFinal/build/

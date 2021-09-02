@@ -39,7 +39,7 @@ public class Main {
         try {
             // Criando e abrindo o arquivo
             Writer writer = Files.newBufferedWriter(Paths.get("ListagemAlunos.csv"));
-            StatefulBeanToCsv<Aluno> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+            StatefulBeanToCsv<Aluno> beanToCsv = new StatefulBeanToCsvBuilder(writer).withApplyQuotesToAll(false).build();
             // Escrevendo os dados no arquivo
             beanToCsv.write(listAlunos);
             // Fechando o arquivo
@@ -55,7 +55,7 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+        
     /**
      * @param args the command line arguments
      */   
@@ -109,14 +109,6 @@ public class Main {
         
         if(listAlunos.isEmpty())
             System.out.println("Ultimo cadastrado -> "+listAlunos.get(listAlunos.size()-1).getCpf());
-        
-        /* cria��o do Objeto BuscarAluno da Classe Aluno
-        Aluno BuscarAluno = new Aluno();
-        
-        BuscarAluno.getNome();
-        BuscarAluno.getMatricula();
-        Esbo�o, @danielbricio. */
-        
         
         System.exit(0);
     }
