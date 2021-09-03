@@ -56,6 +56,21 @@ public class Main {
         }
     }
         
+   public static void imprimeTerceiro(ArrayList<Aluno> aluno){
+       if(aluno.size() < 3){
+           JOptionPane.showMessageDialog(null, "Quantidade cadastrada insuficiente");
+           return;
+        }
+       
+        Aluno terceiro = aluno.get(2);
+        int quantidade = aluno.size();
+        
+        String mensagem = "<html>O terceiro aluno é: " + terceiro.getNome() 
+                +"<br>Quantidade de elementos da lista: " + quantidade + "</html>";
+       
+       JOptionPane.showMessageDialog(null, mensagem);
+       
+   }
     /**
      * @param args the command line arguments
      */   
@@ -80,6 +95,12 @@ public class Main {
                     // recupera os dados dos alunos cadastrados
                     listAlunos = cadastro.getAluno();
                     break;
+                   
+                case 2:
+                    BuscarAluno buscara = new BuscarAluno(null, true);
+                    buscara.setVisible(true);
+                    break;
+                    
                 case 3:
                     // INSERIR NA TERCEIRA POSIï¿½ï¿½O
                     // instanciando a tela
@@ -88,19 +109,17 @@ public class Main {
                     // recupera os dados dos alunos cadastrados
                     listAlunos = cadastroTerceiro.getAluno();
                     break;
-                   
-                case 2:
-                BuscarAluno buscara = new BuscarAluno(null, true);
-                buscara.setVisible(true);
-                    break;
                     
+                case 4:
+                    imprimeTerceiro(listAlunos);
+                    break;
                 case 6:
                     obterPrimeiroUltimo(listAlunos);
                     break;
                 case 7:
                     gerarCsv(listAlunos);
                     break;
-                    
+                
                 default:
                     System.out.println("Opcao invalida");
                     break;
