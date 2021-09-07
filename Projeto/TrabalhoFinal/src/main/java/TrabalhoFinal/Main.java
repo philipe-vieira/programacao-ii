@@ -56,7 +56,7 @@ public class Main {
         }
     }
         
-   public static void imprimeTerceiro(ArrayList<Aluno> aluno){
+    public static void imprimeTerceiro(ArrayList<Aluno> aluno){
        if(aluno.size() < 3){
            JOptionPane.showMessageDialog(null, "Quantidade cadastrada insuficiente");
            return;
@@ -71,6 +71,26 @@ public class Main {
        JOptionPane.showMessageDialog(null, mensagem);
        
    }
+    
+    public static void obterMaisNovoEMaisVelho(ArrayList<Aluno> aluno){
+        Aluno novo = new Aluno();
+        Aluno velho = new Aluno();
+
+        for(Aluno i: aluno){
+            if(novo.getIdade() == 0 && velho.getIdade() == 0){
+                novo = velho = i;
+            }else if (i.getIdade() < novo.getIdade()){
+                novo = i;
+            }else if (i.getIdade() > velho.getIdade()){
+                velho = i;
+            }
+        }
+
+        String msg = "<html>"+novo.getNome()+" é o aluno(a) mais novo(a)"
+                     +"<br>"+velho.getNome()+" é o aluno(a) mais velho(a)"+"</html>";
+        JOptionPane.showMessageDialog(null, msg);
+    }
+   
     /**
      * @param args the command line arguments
      */   
@@ -78,7 +98,7 @@ public class Main {
         // TODO code application logic here
         ArrayList<Aluno> listAlunos = new ArrayList<Aluno>();
         
-        // instanciando a tela
+        // instanciando a tela de menu
         Menu mnu = new Menu(null, true);
         
         do{
@@ -119,7 +139,9 @@ public class Main {
                 case 7:
                     gerarCsv(listAlunos);
                     break;
-                
+                case 8:
+                    obterMaisNovoEMaisVelho(listAlunos);
+                    break;
                 default:
                     System.out.println("Opcao invalida");
                     break;
