@@ -97,12 +97,12 @@ public class Main {
                     break;
                    
                 case 2:
-                    BuscarAluno buscara = new BuscarAluno(null, true);
+                    BuscarAluno buscara = new BuscarAluno(null, true, listAlunos);
                     buscara.setVisible(true);
                     break;
                     
                 case 3:
-                    // INSERIR NA TERCEIRA POSI��O
+                    // INSERIR NA TERCEIRA POSICAO
                     // instanciando a tela
                     CadastroAluno cadastroTerceiro = new CadastroAluno(null, true, listAlunos, true);
                     cadastroTerceiro.setVisible(true);

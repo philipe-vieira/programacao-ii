@@ -67,6 +67,16 @@ public class Aluno {
         this.cpf = cpf;
     }
     
+     @Override public boolean equals(Object obj){
+        
+        return ((this.nome == null ? ((Aluno) obj).getNome() == null : this.nome.equals(((Aluno) obj).getNome() ))) &&
+                (this.cpf == null ? ((Aluno) obj).getCpf() == null : this.cpf.equals(((Aluno) obj).getCpf() )) &&
+                (this.dataNascimento == null ? ((Aluno) obj).getDataNascimento() == null : this.dataNascimento.equals(((Aluno) obj).getDataNascimento())) &&
+                this.idade == ((Aluno) obj).getIdade() &&
+                this.matricula == ((Aluno) obj).getMatricula() &&
+                (this.telefone == null ? ((Aluno) obj).getTelefone() == null : this.telefone.equals(((Aluno) obj).getTelefone()));
+    }
+    
    
     
 }
