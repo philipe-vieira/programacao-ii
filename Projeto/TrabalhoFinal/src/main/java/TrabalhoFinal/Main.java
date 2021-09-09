@@ -90,7 +90,24 @@ public class Main {
                      +"<br>"+velho.getNome()+" é o aluno(a) mais velho(a)"+"</html>";
         JOptionPane.showMessageDialog(null, msg);
     }
-   
+    
+    /**
+     * Função para remoção do ultimo elemento da lista de alunos
+     * @param alunos ArrayList<Aluno> - Lista de alunos cadastrados
+     * @return ArrayList<Aluno>
+     * @author Philipe
+     */
+    public static ArrayList<Aluno> removerUltimo(ArrayList<Aluno> alunos){
+        if(alunos.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Lista de alunos vazia!");
+            return alunos;
+        }
+        int ultimo = alunos.size() - 1;
+        alunos.remove(ultimo);
+        JOptionPane.showMessageDialog(null, "Ultimo Elemento removido com sucesso!");
+        return alunos;
+    }
+    
     /**
      * @param args the command line arguments
      */   
@@ -110,7 +127,7 @@ public class Main {
                     break;
                 case 1:
                     // instanciando a tela
-                    CadastroAluno cadastro = new CadastroAluno(null, true);
+                    CadastroAluno cadastro = new CadastroAluno(null, true, listAlunos);
                     cadastro.setVisible(true);
                     // recupera os dados dos alunos cadastrados
                     listAlunos = cadastro.getAluno();
@@ -133,6 +150,9 @@ public class Main {
                 case 4:
                     imprimeTerceiro(listAlunos);
                     break;
+                case 5:
+                    listAlunos = removerUltimo(listAlunos);
+                    break;
                 case 6:
                     obterPrimeiroUltimo(listAlunos);
                     break;
@@ -148,7 +168,7 @@ public class Main {
             }
         } while (mnu.escolha != 0);
         
-        if(listAlunos.isEmpty())
+        if(!listAlunos.isEmpty())
             System.out.println("Ultimo cadastrado -> "+listAlunos.get(listAlunos.size()-1).getCpf());
         
         System.exit(0);

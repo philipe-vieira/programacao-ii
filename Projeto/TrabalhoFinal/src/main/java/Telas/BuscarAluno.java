@@ -12,7 +12,9 @@ package Telas;
 public class BuscarAluno extends javax.swing.JDialog {
 
     /**
-     * Creates new form BuscarAluno1
+     * Creates new form BuscarAluno
+     * @param parents Frame pai
+     * @param modal is a boolean of modal
      */
     public BuscarAluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
