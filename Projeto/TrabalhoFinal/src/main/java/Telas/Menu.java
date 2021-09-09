@@ -6,7 +6,7 @@
 package Telas;
 
 /**
- *
+ * Tela de menu da aplicação
  * @author Philipe
  */
 public class Menu extends javax.swing.JDialog {

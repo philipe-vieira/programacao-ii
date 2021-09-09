@@ -20,28 +20,39 @@ import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+
 /**
- *
+ * Classe principal do projeto
  * @author Philipe
  */
 public class Main {
-
-    public static void obterPrimeiroUltimo(ArrayList<Aluno> aluno){
-        Aluno primeiro = aluno.get(0);
-        Aluno ultimo = aluno.get(aluno.size()-1);
+    /** 
+    * Metodo para obter as matrículas do Primeiro e Ultimo alunos da Lista
+    * @param alunos ArrayList<Aluno> - Lista de alunos a ser manipulada
+    * @author Philipe
+    */
+    public static void obterPrimeiroUltimo(ArrayList<Aluno> alunos){
+        Aluno primeiro = alunos.get(0);
+        Aluno ultimo = alunos.get(alunos.size()-1);
         JOptionPane.showInternalMessageDialog(null, 
                 "<html>Primeiro -> "+primeiro.getMatricula()+" - "+primeiro.getNome()
                 +"<br>Ultimo -> "+ultimo.getMatricula()+" - "+ultimo.getNome()+"</html>"
         );
     }
     
-    public static void gerarCsv(ArrayList<Aluno> listAlunos){
+    /** 
+    * Metodo para gerar o arquivo csv com os dados dos alunos
+    * @param alunos ArrayList<Aluno> - Lista de alunos a ser inseridos no arquivo
+    * @author Philipe
+    */
+    public static void gerarCsv(ArrayList<Aluno> alunos){
         try {
             // Criando e abrindo o arquivo
             Writer writer = Files.newBufferedWriter(Paths.get("ListagemAlunos.csv"));
             StatefulBeanToCsv<Aluno> beanToCsv = new StatefulBeanToCsvBuilder(writer).withApplyQuotesToAll(false).build();
             // Escrevendo os dados no arquivo
-            beanToCsv.write(listAlunos);
+            beanToCsv.write(alunos);
             // Fechando o arquivo
             writer.flush();
             writer.close();
@@ -55,23 +66,33 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-        
-    public static void imprimeTerceiro(ArrayList<Aluno> aluno){
-       if(aluno.size() < 3){
-           JOptionPane.showMessageDialog(null, "Quantidade cadastrada insuficiente");
-           return;
+       
+    /** 
+    * Metodo para imprimir o terceiro aluno cadastrado
+    * @param alunos ArrayList<Aluno> - Lista de alunos a ser manipulada
+    * @author ada
+    */
+    public static void imprimeTerceiro(ArrayList<Aluno> alunos){
+        if(alunos.size() < 3){
+            JOptionPane.showMessageDialog(null, "Quantidade cadastrada insuficiente");
+            return;
         }
        
-        Aluno terceiro = aluno.get(2);
-        int quantidade = aluno.size();
+        Aluno terceiro = alunos.get(2);
+        int quantidade = alunos.size();
         
         String mensagem = "<html>O terceiro aluno é: " + terceiro.getNome() 
                 +"<br>Quantidade de elementos da lista: " + quantidade + "</html>";
        
-       JOptionPane.showMessageDialog(null, mensagem);
-       
-   }
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
     
+    /** 
+    * Metodo para gerar obter os dados do aluno mais velho e do mais novo
+    * dentre os alunos cadastrados
+    * @param alunos ArrayList<Aluno> - Lista de alunos a ser manipulada
+    * @author Philipe
+    */
     public static void obterMaisNovoEMaisVelho(ArrayList<Aluno> aluno){
         Aluno novo = new Aluno();
         Aluno velho = new Aluno();
@@ -92,7 +113,7 @@ public class Main {
     }
     
     /**
-     * Função para remoção do ultimo elemento da lista de alunos
+     * Método para remoção do ultimo elemento da lista de alunos
      * @param alunos ArrayList<Aluno> - Lista de alunos cadastrados
      * @return ArrayList<Aluno>
      * @author Philipe
@@ -109,6 +130,7 @@ public class Main {
     }
     
     /**
+     * Método principal para a execução do programa
      * @param args the command line arguments
      */   
     public static void main(String[] args) {
@@ -132,12 +154,10 @@ public class Main {
                     // recupera os dados dos alunos cadastrados
                     listAlunos = cadastro.getAluno();
                     break;
-                   
                 case 2:
                     BuscarAluno buscara = new BuscarAluno(null, true, listAlunos);
                     buscara.setVisible(true);
                     break;
-                    
                 case 3:
                     // INSERIR NA TERCEIRA POSICAO
                     // instanciando a tela
@@ -146,7 +166,6 @@ public class Main {
                     // recupera os dados dos alunos cadastrados
                     listAlunos = cadastroTerceiro.getAluno();
                     break;
-                    
                 case 4:
                     imprimeTerceiro(listAlunos);
                     break;
