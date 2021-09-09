@@ -5,11 +5,18 @@
  */
 package Telas;
 
+import TrabalhoFinal.Aluno;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author danielbricio
  */
 public class BuscarAluno extends javax.swing.JDialog {
+    
+    private ArrayList<Aluno> listAlunos = new ArrayList<Aluno>();
 
     /**
      * Creates new form BuscarAluno
@@ -19,6 +26,12 @@ public class BuscarAluno extends javax.swing.JDialog {
     public BuscarAluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+    
+    public BuscarAluno(java.awt.Frame parent, boolean modal, ArrayList<Aluno> listAlunos) {
+        super(parent, modal);
+        initComponents();
+        this.listAlunos = listAlunos;
     }
 
     /**
@@ -35,9 +48,17 @@ public class BuscarAluno extends javax.swing.JDialog {
         jLabelNomeDoAluno = new javax.swing.JLabel();
         txtBuscarNomeAluno = new javax.swing.JTextField();
         jLabelMatriculaDoAluno = new javax.swing.JLabel();
-        txtBuscarMatriculaAluno = new javax.swing.JFormattedTextField();
+        txtMatriculaConsultar = new javax.swing.JFormattedTextField();
         btnBuscarAluno = new javax.swing.JButton();
         btnVoltarAoMenuConsultar = new javax.swing.JButton();
+        txtIdadeConsultar = new javax.swing.JFormattedTextField();
+        jLabelIdadeConsultar = new javax.swing.JLabel();
+        jLabelCpfConsultar = new javax.swing.JLabel();
+        txtCpfConsultar = new javax.swing.JFormattedTextField();
+        txtTelefoneConsultar = new javax.swing.JFormattedTextField();
+        jLabelTelefoneConsultar = new javax.swing.JLabel();
+        jLabelNascimentoConsultar = new javax.swing.JLabel();
+        txtNascimentoConsultar = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -45,16 +66,28 @@ public class BuscarAluno extends javax.swing.JDialog {
         jLabelConsultarAluno.setText("Consultar Aluno");
 
         jLabelPorFavor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelPorFavor.setText("Por favor, insira pelo menos um dos dados solicitados para efetuar a buscar!");
+        jLabelPorFavor.setText("Por favor, insira os dados solicitados para efetuar a buscar!");
 
         jLabelNomeDoAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelNomeDoAluno.setText("Nome do Aluno:");
 
         jLabelMatriculaDoAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelMatriculaDoAluno.setText("Matrícula do Aluno:");
+        jLabelMatriculaDoAluno.setText("Matrï¿½cula:");
+
+        try {
+            txtMatriculaConsultar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtMatriculaConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         btnBuscarAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBuscarAluno.setText("Buscar Aluno");
+        btnBuscarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarAlunoActionPerformed(evt);
+            }
+        });
 
         btnVoltarAoMenuConsultar.setText("Voltar ao menu ");
         btnVoltarAoMenuConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -63,29 +96,85 @@ public class BuscarAluno extends javax.swing.JDialog {
             }
         });
 
+        try {
+            txtIdadeConsultar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtIdadeConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabelIdadeConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelIdadeConsultar.setText("Idade:");
+
+        jLabelCpfConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelCpfConsultar.setText("CPF:");
+
+        try {
+            txtCpfConsultar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCpfConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        try {
+            txtTelefoneConsultar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) # ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtTelefoneConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabelTelefoneConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelTelefoneConsultar.setText("Telefone:");
+
+        jLabelNascimentoConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelNascimentoConsultar.setText("Nascimento:");
+
+        try {
+            txtNascimentoConsultar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtNascimentoConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabelNomeDoAluno, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelPorFavor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelConsultarAluno, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelNascimentoConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNascimentoConsultar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVoltarAoMenuConsultar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscarAluno))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtMatriculaConsultar)
+                            .addComponent(jLabelMatriculaDoAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelIdadeConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtIdadeConsultar))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelMatriculaDoAluno)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtBuscarMatriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnVoltarAoMenuConsultar)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscarAluno)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                            .addComponent(jLabelCpfConsultar)
+                            .addComponent(txtCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelTelefoneConsultar)
+                            .addComponent(txtTelefoneConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)))
+                    .addComponent(txtBuscarNomeAluno)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelNomeDoAluno)
+                            .addComponent(jLabelConsultarAluno)
+                            .addComponent(jLabelPorFavor))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,15 +187,35 @@ public class BuscarAluno extends javax.swing.JDialog {
                 .addComponent(jLabelNomeDoAluno)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelMatriculaDoAluno)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscarMatriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnBuscarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
-                    .addComponent(btnVoltarAoMenuConsultar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabelMatriculaDoAluno)
+                                    .addComponent(jLabelIdadeConsultar)
+                                    .addComponent(jLabelCpfConsultar))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtMatriculaConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIdadeConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelTelefoneConsultar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTelefoneConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBuscarAluno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabelNascimentoConsultar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNascimentoConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnVoltarAoMenuConsultar)))
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -116,6 +225,24 @@ public class BuscarAluno extends javax.swing.JDialog {
     private void btnVoltarAoMenuConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAoMenuConsultarActionPerformed
        this.dispose();
     }//GEN-LAST:event_btnVoltarAoMenuConsultarActionPerformed
+
+    private void btnBuscarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAlunoActionPerformed
+        
+        Aluno aluno = new Aluno();
+        aluno.setMatricula(Integer.parseInt(txtMatriculaConsultar.getText()));
+        aluno.setNome(txtBuscarNomeAluno.getText());
+        aluno.setCpf(txtCpfConsultar.getText());
+        aluno.setDataNascimento(txtNascimentoConsultar.getText());
+        aluno.setTelefone(txtTelefoneConsultar.getText());
+        aluno.setIdade(Integer.parseInt(txtIdadeConsultar.getText()));
+        
+        //verificar se ja esta na lista
+         if(this.listAlunos.contains(aluno)){
+            JOptionPane.showMessageDialog(null,"Aluno na Lista");
+        }else JOptionPane.showMessageDialog(null, "Aluno nï¿½o estï¿½ na lista");
+        this.dispose();
+        
+    }//GEN-LAST:event_btnBuscarAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,10 +291,18 @@ public class BuscarAluno extends javax.swing.JDialog {
     private javax.swing.JButton btnBuscarAluno;
     private javax.swing.JButton btnVoltarAoMenuConsultar;
     private javax.swing.JLabel jLabelConsultarAluno;
+    private javax.swing.JLabel jLabelCpfConsultar;
+    private javax.swing.JLabel jLabelIdadeConsultar;
     private javax.swing.JLabel jLabelMatriculaDoAluno;
+    private javax.swing.JLabel jLabelNascimentoConsultar;
     private javax.swing.JLabel jLabelNomeDoAluno;
     private javax.swing.JLabel jLabelPorFavor;
-    private javax.swing.JFormattedTextField txtBuscarMatriculaAluno;
+    private javax.swing.JLabel jLabelTelefoneConsultar;
     private javax.swing.JTextField txtBuscarNomeAluno;
+    private javax.swing.JFormattedTextField txtCpfConsultar;
+    private javax.swing.JFormattedTextField txtIdadeConsultar;
+    private javax.swing.JFormattedTextField txtMatriculaConsultar;
+    private javax.swing.JFormattedTextField txtNascimentoConsultar;
+    private javax.swing.JFormattedTextField txtTelefoneConsultar;
     // End of variables declaration//GEN-END:variables
 }
