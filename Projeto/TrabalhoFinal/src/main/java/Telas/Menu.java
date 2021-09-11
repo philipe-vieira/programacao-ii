@@ -13,7 +13,7 @@ public class Menu extends javax.swing.JDialog {
     public int escolha = 0;
 
     /**
-     * Creates new form Menu
+     * Construtor para criação de uma nova tela de menu
      */
     public Menu(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -209,54 +209,90 @@ public class Menu extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método para ação do botão CADASTRAR
+     * @param evt - Evento de click no botão
+     */
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
         // TODO add your handling code here:
         this.escolha = 1;
         this.dispose();
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
+    /**
+     * Método para ação do botão CONSULTAR
+     * @param evt - Evento de click no botão
+     */
     private void jBtnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultarActionPerformed
         // TODO add your handling code here:
         this.escolha = 2;
         this.dispose();
     }//GEN-LAST:event_jBtnConsultarActionPerformed
 
+    /**
+     * Método para ação do botão INSERIR NA 3 POS
+     * @param evt - Evento de click no botão
+     */
     private void jBtnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnInserirActionPerformed
         // TODO add your handling code here:
         this.escolha = 3;
         this.dispose();
     }//GEN-LAST:event_jBtnInserirActionPerformed
 
+    /**
+     * Método para ação do botão OBTER ALUNO 3 POS
+     * @param evt - Evento de click no botão
+     */
     private void jBtnObter3AlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnObter3AlunoActionPerformed
         // TODO add your handling code here:
         this.escolha = 4;
         this.dispose();
     }//GEN-LAST:event_jBtnObter3AlunoActionPerformed
 
+    /**
+     * Método para ação do botão REMOVER (ULTIMO)
+     * @param evt - Evento de click no botão
+     */
     private void jBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRemoverActionPerformed
         // TODO add your handling code here:
         this.escolha = 5;
         this.dispose();
     }//GEN-LAST:event_jBtnRemoverActionPerformed
 
+    /**
+     * Método para ação do botão OBTER MATRICULA PRIMEIRO E ULTIMO
+     * @param evt - Evento de click no botão
+     */
     private void jBtnObterPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnObterPUActionPerformed
         // TODO add your handling code here:
         this.escolha = 6;
         this.dispose();
     }//GEN-LAST:event_jBtnObterPUActionPerformed
 
+    /**
+     * Método para ação do botão SALVAR CSV
+     * @param evt - Evento de click no botão
+     */
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // TODO add your handling code here:
         this.escolha = 7;
         this.dispose();
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
+    /**
+     * Método para ação do botão IMPRIMIR MAIS VELHO E MAIS NOVO
+     * @param evt - Evento de click no botão
+     */
     private void jBtnImprimirVelhoNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImprimirVelhoNovoActionPerformed
         // TODO add your handling code here:
         this.escolha = 8;
         this.dispose();
     }//GEN-LAST:event_jBtnImprimirVelhoNovoActionPerformed
 
+    /**
+     * Método para ação do botão SAIR
+     * @param evt - Evento de click no botão
+     */
     private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
         // TODO add your handling code here:
         this.escolha = 0;

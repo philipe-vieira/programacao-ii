@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe da Tela para o cadastro de alunos
  * @author Philipe
  */
 public class CadastroAluno extends javax.swing.JDialog {
@@ -19,20 +19,35 @@ public class CadastroAluno extends javax.swing.JDialog {
     private boolean insereTerceiro = false;
     
     /**
-     * Creates new form CadastroAluno
+     * Criar uma nova tela CadastroAluno
      * Construtor da classe
+     * @param parent java.awt.Frame - Objeto da janela pai
+     * @param modal boolean - boleano para identificar se a janela será um modal 
      */
     public CadastroAluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
-    
+    /**
+     * Criar uma nova tela CadastroAluno
+     * Construtor da classe
+     * @param parent  java.awt.Frame - Objeto da janela pai
+     * @param modal boolean - boleano para identificar se a janela será um modal 
+     * @param aluno ArrayList - Lista de alunos
+     */
     public CadastroAluno(java.awt.Frame parent, boolean modal, ArrayList<Aluno> aluno) {
         super(parent, modal);
         initComponents();
         this.aluno = aluno;
     }
-    
+    /**
+     * Criar uma nova tela CadastroAluno
+     * Construtor da classe
+     * @param parent java.awt.Frame - Objeto da janela pai
+     * @param modal boolean - boleano para identificar se a janela será um modal 
+     * @param aluno ArrayList - Lista de alunos
+     * @param terceiro boolean - booleano para verificação se o aluno será inserido na 3 posicao
+     */
     public CadastroAluno(java.awt.Frame parent, boolean modal, ArrayList<Aluno> aluno, boolean terceiro) {
         super(parent, modal);
         initComponents();
@@ -41,15 +56,28 @@ public class CadastroAluno extends javax.swing.JDialog {
     }
 
     /**
-     * Getters and Setter of Aluno variable
-     * @return 
+     * Método para obter os dados da lista de alunos
+     * @return ArrayList - Lista de Alunos cadastrados
      */
     public ArrayList<Aluno> getAluno() {
         return aluno;
     }
+    
+    /**
+    * Método para alterar a lista de alunos
+    * @param aluno ArrayList - valor a ser atribuido à lista de alunos
+    */
     public void setAluno(ArrayList<Aluno> aluno) {
         this.aluno = aluno;
     }
+    
+    /**
+     * Método para identificar se a matricula existe para algum aluno já cadastrado
+     * @param lista - lista de alunos já cadastrados anteriormente
+     * @param matricula - matricula buscada no array de alunos
+     * @return boolean - booleano verdadeiro ou falso 
+     * para indicar ocorrencia da matricula do aluno no array
+     */
     public boolean buscaAluno(ArrayList<Aluno> lista, int matricula){
         // Percorrendo a lista dos alunos, 
         // se encontrar uma aluno com a matricula buscada returna true;
@@ -60,6 +88,11 @@ public class CadastroAluno extends javax.swing.JDialog {
         
         return false;
     }
+    
+    /**
+     * Método para inserir um novo aluno na terceira posicao da lista
+     * @param aluno - Objeto Aluno a ser inserido na lista
+     */
     public void insereTerceiro(Aluno aluno){
         this.aluno.add(2, aluno);
         // Mostra um pop-up com o nome do aluno cadastrado
@@ -116,12 +149,6 @@ public class CadastroAluno extends javax.swing.JDialog {
 
         lblTelefone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblTelefone.setText("Telefone:");
-
-        jTextNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNomeActionPerformed(evt);
-            }
-        });
 
         btnCadastro.setText("Cadastrar Aluno");
         btnCadastro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -265,11 +292,10 @@ public class CadastroAluno extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Ações dos botões
+     * Método para ação do botão CADASTRAR, 
+     * e para toda a logica do cadastro de alunos
+     * @param evt - Evento de click no botão
      */
-    private void jTextNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNomeActionPerformed
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // TODO add your handling code here:
         Aluno aluno = new Aluno();
@@ -309,6 +335,11 @@ public class CadastroAluno extends javax.swing.JDialog {
         limparCampos();
     }//GEN-LAST:event_btnCadastroActionPerformed
 
+    /**
+     * Método para ação do botão de VOLTAR,
+     * este irá fechar a tela e continuar o script do sistema.
+     * @param evt - Evento de click no botão
+     */
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
         this.dispose();

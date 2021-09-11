@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe da tela para busca de alunos na lista
  * @author danielbricio
  */
 public class BuscarAluno extends javax.swing.JDialog {
@@ -19,15 +19,20 @@ public class BuscarAluno extends javax.swing.JDialog {
     private ArrayList<Aluno> listAlunos = new ArrayList<Aluno>();
 
     /**
-     * Creates new form BuscarAluno
-     * @param parents Frame pai
-     * @param modal is a boolean of modal
+     * Criar nova tela BuscarAluno
+     * @param parent - Frame pai
+     * @param modal - is a boolean of modal
      */
     public BuscarAluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
-    
+    /**
+     * Criar nova tela BuscarAluno
+     * @param parent - Frame pai
+     * @param modal - is a boolean of modal
+     * @param listAlunos - lista de alunos
+     */
     public BuscarAluno(java.awt.Frame parent, boolean modal, ArrayList<Aluno> listAlunos) {
         super(parent, modal);
         initComponents();
@@ -222,10 +227,20 @@ public class BuscarAluno extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Método para ação do botão VOLTAR,
+     * este irá fechar a tela e continuar o script do sistema.
+     * @param evt - Evento de click no botão
+     */
     private void btnVoltarAoMenuConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAoMenuConsultarActionPerformed
        this.dispose();
     }//GEN-LAST:event_btnVoltarAoMenuConsultarActionPerformed
 
+    /**
+     * Método para ação do botão BUSCAR, 
+     * e para toda a logica da busca de alunos
+     * @param evt - Evento de click no botão
+     */
     private void btnBuscarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAlunoActionPerformed
         
         Aluno aluno = new Aluno();
