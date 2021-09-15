@@ -33,12 +33,22 @@ public class Main {
     * @author Philipe
     */
     public static void obterPrimeiroUltimo(ArrayList<Aluno> alunos){
+        if(alunos.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Quantidade de Alunos Insuficiente");
+                return;
+            }
         Aluno primeiro = alunos.get(0);
         Aluno ultimo = alunos.get(alunos.size()-1);
+         
+        
+       
+       
         JOptionPane.showInternalMessageDialog(null, 
                 "<html>Primeiro -> "+primeiro.getMatricula()+" - "+primeiro.getNome()
                 +"<br>Ultimo -> "+ultimo.getMatricula()+" - "+ultimo.getNome()+"</html>"
         );
+        
+         
     }
     
     /** 
@@ -98,18 +108,23 @@ public class Main {
         Aluno velho = new Aluno();
 
         for(Aluno i: aluno){
+           
             if(novo.getIdade() == 0 && velho.getIdade() == 0){
                 novo = velho = i;
             }else if (i.getIdade() < novo.getIdade()){
                 novo = i;
             }else if (i.getIdade() > velho.getIdade()){
                 velho = i;
+            
             }
         }
-
+         if(aluno.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Quantidade de Alunos Insuficiente");
+            }else{
         String msg = "<html>"+novo.getNome()+" é o aluno(a) mais novo(a)"
                      +"<br>"+velho.getNome()+" é o aluno(a) mais velho(a)"+"</html>";
         JOptionPane.showMessageDialog(null, msg);
+         }
     }
     
     /**

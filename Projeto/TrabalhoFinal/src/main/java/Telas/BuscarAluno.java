@@ -49,7 +49,6 @@ public class BuscarAluno extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabelConsultarAluno = new javax.swing.JLabel();
-        jLabelPorFavor = new javax.swing.JLabel();
         jLabelNomeDoAluno = new javax.swing.JLabel();
         txtBuscarNomeAluno = new javax.swing.JTextField();
         jLabelMatriculaDoAluno = new javax.swing.JLabel();
@@ -64,20 +63,26 @@ public class BuscarAluno extends javax.swing.JDialog {
         jLabelTelefoneConsultar = new javax.swing.JLabel();
         jLabelNascimentoConsultar = new javax.swing.JLabel();
         txtNascimentoConsultar = new javax.swing.JFormattedTextField();
+        lblMenu = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabelPorFavor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1020, 530));
+        setSize(new java.awt.Dimension(1020, 530));
 
-        jLabelConsultarAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelConsultarAluno.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabelConsultarAluno.setForeground(new java.awt.Color(224, 30, 33));
         jLabelConsultarAluno.setText("Consultar Aluno");
 
-        jLabelPorFavor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelPorFavor.setText("Por favor, insira os dados solicitados para efetuar a buscar!");
-
         jLabelNomeDoAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelNomeDoAluno.setForeground(new java.awt.Color(11, 111, 181));
         jLabelNomeDoAluno.setText("Nome do Aluno:");
 
         jLabelMatriculaDoAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelMatriculaDoAluno.setText("Matrï¿½cula:");
+        jLabelMatriculaDoAluno.setForeground(new java.awt.Color(11, 111, 181));
+        jLabelMatriculaDoAluno.setText("Matrícula:");
 
         try {
             txtMatriculaConsultar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
@@ -86,15 +91,21 @@ public class BuscarAluno extends javax.swing.JDialog {
         }
         txtMatriculaConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        btnBuscarAluno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnBuscarAluno.setText("Buscar Aluno");
+        btnBuscarAluno.setBackground(new java.awt.Color(11, 111, 181));
+        btnBuscarAluno.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btnBuscarAluno.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarAluno.setText("Consultar Aluno");
         btnBuscarAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarAlunoActionPerformed(evt);
             }
         });
 
-        btnVoltarAoMenuConsultar.setText("Voltar ao menu ");
+        btnVoltarAoMenuConsultar.setBackground(new java.awt.Color(11, 111, 181));
+        btnVoltarAoMenuConsultar.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnVoltarAoMenuConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnVoltarAoMenuConsultar.setText("Voltar ao menu principal");
+        btnVoltarAoMenuConsultar.setActionCommand("Voltar ao menu principal");
         btnVoltarAoMenuConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVoltarAoMenuConsultarActionPerformed(evt);
@@ -109,9 +120,11 @@ public class BuscarAluno extends javax.swing.JDialog {
         txtIdadeConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabelIdadeConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelIdadeConsultar.setForeground(new java.awt.Color(11, 111, 181));
         jLabelIdadeConsultar.setText("Idade:");
 
         jLabelCpfConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelCpfConsultar.setForeground(new java.awt.Color(11, 111, 181));
         jLabelCpfConsultar.setText("CPF:");
 
         try {
@@ -129,9 +142,11 @@ public class BuscarAluno extends javax.swing.JDialog {
         txtTelefoneConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabelTelefoneConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelTelefoneConsultar.setForeground(new java.awt.Color(11, 111, 181));
         jLabelTelefoneConsultar.setText("Telefone:");
 
         jLabelNascimentoConsultar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelNascimentoConsultar.setForeground(new java.awt.Color(11, 111, 181));
         jLabelNascimentoConsultar.setText("Nascimento:");
 
         try {
@@ -141,86 +156,119 @@ public class BuscarAluno extends javax.swing.JDialog {
         }
         txtNascimentoConsultar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        lblMenu.setFont(new java.awt.Font("Malgun Gothic", 1, 60)); // NOI18N
+        lblMenu.setForeground(new java.awt.Color(224, 30, 33));
+        lblMenu.setText("Cadastre");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel1.setText("™");
+
+        jLabel3.setFont(new java.awt.Font("Consolas", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("_____________________________________________________________________________________________________________________________________________________");
+
+        jLabelPorFavor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelPorFavor.setForeground(new java.awt.Color(224, 30, 33));
+        jLabelPorFavor.setText("Por favor, insira os dados solicitados para efetuar a buscar!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelNascimentoConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtNascimentoConsultar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVoltarAoMenuConsultar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscarAluno))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtMatriculaConsultar)
-                            .addComponent(jLabelMatriculaDoAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelIdadeConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtIdadeConsultar))
-                        .addGap(18, 18, 18)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelCpfConsultar)
-                            .addComponent(txtCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTelefoneConsultar)
-                            .addComponent(txtTelefoneConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)))
-                    .addComponent(txtBuscarNomeAluno)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(250, 250, 250)
+                                .addComponent(jLabel1)
+                                .addGap(499, 499, 499)
+                                .addComponent(jLabelConsultarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblMenu)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNomeDoAluno)
-                            .addComponent(jLabelConsultarAluno)
-                            .addComponent(jLabelPorFavor))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(22, 22, 22))
+                        .addGap(570, 570, 570)
+                        .addComponent(jLabelPorFavor, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(jLabelNomeDoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(jLabelMatriculaDoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabelIdadeConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabelCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabelTelefoneConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(txtMatriculaConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(txtIdadeConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(txtCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(txtTelefoneConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(460, 460, 460)
+                        .addComponent(jLabelNascimentoConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(420, 420, 420)
+                        .addComponent(txtNascimentoConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(400, 400, 400)
+                        .addComponent(btnBuscarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(410, 410, 410)
+                        .addComponent(btnVoltarAoMenuConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelConsultarAluno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelPorFavor)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelNomeDoAluno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabelMatriculaDoAluno)
-                                    .addComponent(jLabelIdadeConsultar)
-                                    .addComponent(jLabelCpfConsultar))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtMatriculaConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtIdadeConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelTelefoneConsultar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTelefoneConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBuscarAluno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabelNascimentoConsultar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNascimentoConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabelConsultarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnVoltarAoMenuConsultar)))
-                .addGap(15, 15, 15))
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel3)))
+                .addGap(6, 6, 6)
+                .addComponent(jLabelPorFavor)
+                .addGap(5, 5, 5)
+                .addComponent(jLabelNomeDoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txtBuscarNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelMatriculaDoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelIdadeConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTelefoneConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMatriculaConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdadeConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCpfConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefoneConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabelNascimentoConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txtNascimentoConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btnBuscarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnVoltarAoMenuConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
@@ -254,7 +302,7 @@ public class BuscarAluno extends javax.swing.JDialog {
         //verificar se ja esta na lista
          if(this.listAlunos.contains(aluno)){
             JOptionPane.showMessageDialog(null,"Aluno na Lista");
-        }else JOptionPane.showMessageDialog(null, "Aluno nï¿½o estï¿½ na lista");
+        }else JOptionPane.showMessageDialog(null, "Aluno não está na lista");
         this.dispose();
         
     }//GEN-LAST:event_btnBuscarAlunoActionPerformed
@@ -305,6 +353,8 @@ public class BuscarAluno extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarAluno;
     private javax.swing.JButton btnVoltarAoMenuConsultar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelConsultarAluno;
     private javax.swing.JLabel jLabelCpfConsultar;
     private javax.swing.JLabel jLabelIdadeConsultar;
@@ -313,6 +363,7 @@ public class BuscarAluno extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelNomeDoAluno;
     private javax.swing.JLabel jLabelPorFavor;
     private javax.swing.JLabel jLabelTelefoneConsultar;
+    private javax.swing.JLabel lblMenu;
     private javax.swing.JTextField txtBuscarNomeAluno;
     private javax.swing.JFormattedTextField txtCpfConsultar;
     private javax.swing.JFormattedTextField txtIdadeConsultar;

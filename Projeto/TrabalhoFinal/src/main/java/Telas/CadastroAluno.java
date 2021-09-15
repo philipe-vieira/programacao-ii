@@ -120,36 +120,51 @@ public class CadastroAluno extends javax.swing.JDialog {
         lblTelefone = new javax.swing.JLabel();
         jTextNome = new javax.swing.JTextField();
         btnCadastro = new javax.swing.JButton();
-        lblBemVindo = new javax.swing.JLabel();
-        lblMensagem = new javax.swing.JLabel();
         jTextCpf = new javax.swing.JFormattedTextField();
         jTextTelefone = new javax.swing.JFormattedTextField();
         jTextDataNasc = new javax.swing.JFormattedTextField();
         jTextIdade = new javax.swing.JFormattedTextField();
         jTextMatricula = new javax.swing.JFormattedTextField();
         btnVoltar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        lblMenu = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de aluno(a)");
+        setPreferredSize(new java.awt.Dimension(1020, 530));
+        setSize(new java.awt.Dimension(1020, 530));
 
         lblMatricula.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblMatricula.setForeground(new java.awt.Color(11, 111, 181));
         lblMatricula.setText("Matrícula:");
 
         lblNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblNome.setForeground(new java.awt.Color(11, 111, 181));
         lblNome.setText("Nome:");
 
         lblCpf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCpf.setForeground(new java.awt.Color(11, 111, 181));
         lblCpf.setText("CPF:");
 
         lblDataNasc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblDataNasc.setForeground(new java.awt.Color(11, 111, 181));
         lblDataNasc.setText("Data de Nascimento:");
 
         lblIdade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblIdade.setForeground(new java.awt.Color(11, 111, 181));
         lblIdade.setText("Idade:");
 
         lblTelefone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblTelefone.setForeground(new java.awt.Color(11, 111, 181));
         lblTelefone.setText("Telefone:");
 
+        jTextNome.setForeground(new java.awt.Color(224, 30, 33));
+
+        btnCadastro.setBackground(new java.awt.Color(11, 111, 181));
+        btnCadastro.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastro.setText("Cadastrar Aluno");
         btnCadastro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -158,12 +173,7 @@ public class CadastroAluno extends javax.swing.JDialog {
             }
         });
 
-        lblBemVindo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblBemVindo.setText("Bem-vindo ao RegistRe!");
-
-        lblMensagem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblMensagem.setText("Por favor, informe os dados solicidados para efetuar o cadastro.");
-
+        jTextCpf.setForeground(new java.awt.Color(224, 30, 33));
         try {
             jTextCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
@@ -171,12 +181,14 @@ public class CadastroAluno extends javax.swing.JDialog {
         }
         jTextCpf.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
+        jTextTelefone.setForeground(new java.awt.Color(224, 30, 33));
         try {
             jTextTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) # ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
+        jTextDataNasc.setForeground(new java.awt.Color(224, 30, 33));
         try {
             jTextDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -184,6 +196,7 @@ public class CadastroAluno extends javax.swing.JDialog {
         }
         jTextDataNasc.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        jTextIdade.setForeground(new java.awt.Color(224, 30, 33));
         try {
             jTextIdade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
         } catch (java.text.ParseException ex) {
@@ -191,6 +204,7 @@ public class CadastroAluno extends javax.swing.JDialog {
         }
         jTextIdade.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        jTextMatricula.setForeground(new java.awt.Color(224, 30, 33));
         try {
             jTextMatricula.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
@@ -198,6 +212,9 @@ public class CadastroAluno extends javax.swing.JDialog {
         }
         jTextMatricula.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        btnVoltar.setBackground(new java.awt.Color(11, 111, 181));
+        btnVoltar.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("Voltar ao menu principal");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,86 +222,105 @@ public class CadastroAluno extends javax.swing.JDialog {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Consolas", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("_____________________________________________________________________________________________________________________________________________________");
+
+        lblMenu.setFont(new java.awt.Font("Malgun Gothic", 1, 60)); // NOI18N
+        lblMenu.setForeground(new java.awt.Color(224, 30, 33));
+        lblMenu.setText("Cadastre");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel1.setText("™");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel2.setText("Por favor, informe os dados solicidados para efetuar o cadastro.");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(lblMensagem))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblMatricula)
-                        .addGap(25, 25, 25)
-                        .addComponent(lblNome))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jTextMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblIdade)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblDataNasc)
-                        .addGap(19, 19, 19)
-                        .addComponent(lblTelefone)
-                        .addGap(82, 82, 82)
-                        .addComponent(lblCpf))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jTextIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(btnVoltar)
-                        .addGap(6, 6, 6)
-                        .addComponent(btnCadastro)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(lblMenu)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel1))
             .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(lblBemVindo)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(520, 520, 520)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(lblMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(jTextMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(lblIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(lblDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(lblCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(lblTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(jTextIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jTextDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jTextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(400, 400, 400)
+                .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(410, 410, 410)
+                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(lblBemVindo)
-                .addGap(3, 3, 3)
-                .addComponent(lblMensagem)
-                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMatricula)
-                    .addComponent(lblNome))
+                    .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addComponent(jLabel3)
                 .addGap(6, 6, 6)
+                .addComponent(jLabel2)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
+                    .addComponent(lblMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIdade)
-                    .addComponent(lblDataNasc)
-                    .addComponent(lblTelefone)
-                    .addComponent(lblCpf))
-                .addGap(6, 6, 6)
+                    .addComponent(jTextMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -390,18 +426,20 @@ public class CadastroAluno extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastro;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JFormattedTextField jTextCpf;
     private javax.swing.JFormattedTextField jTextDataNasc;
     private javax.swing.JFormattedTextField jTextIdade;
     private javax.swing.JFormattedTextField jTextMatricula;
     private javax.swing.JTextField jTextNome;
     private javax.swing.JFormattedTextField jTextTelefone;
-    private javax.swing.JLabel lblBemVindo;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblDataNasc;
     private javax.swing.JLabel lblIdade;
     private javax.swing.JLabel lblMatricula;
-    private javax.swing.JLabel lblMensagem;
+    private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTelefone;
     // End of variables declaration//GEN-END:variables

@@ -39,21 +39,39 @@ public class Menu extends javax.swing.JDialog {
         jBtnSalvar = new javax.swing.JButton();
         jBtnImprimirVelhoNovo = new javax.swing.JButton();
         jBtnSair = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("MENU");
+        setAlwaysOnTop(true);
         setFont(new java.awt.Font("Dialog", 0, 8)); // NOI18N
-        setPreferredSize(new java.awt.Dimension(305, 390));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1020, 530));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
             }
         });
 
-        lblMenu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblMenu.setText("MENU");
+        lblMenu.setFont(new java.awt.Font("Malgun Gothic", 1, 60)); // NOI18N
+        lblMenu.setForeground(new java.awt.Color(224, 30, 33));
+        lblMenu.setText("Cadastre");
 
-        jBtnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jBtnCadastrar.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnCadastrar.setMinimumSize(new java.awt.Dimension(125, 40));
@@ -64,7 +82,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jBtnConsultar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jBtnConsultar.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnConsultar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnConsultar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnConsultar.setText("Consultar Aluno");
         jBtnConsultar.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnConsultar.setMinimumSize(new java.awt.Dimension(125, 40));
@@ -75,8 +95,11 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jBtnInserir.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jBtnInserir.setText("<html>\n<center>\nInserir na \n<br>\n3 pos\n</center>"); // NOI18N
+        jBtnInserir.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnInserir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnInserir.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnInserir.setText("<html>\n<center>\nInserir Aluno \n<br>\nna 3ª Posição\n</center>"); // NOI18N
+        jBtnInserir.setToolTipText("");
         jBtnInserir.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnInserir.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnInserir.setPreferredSize(new java.awt.Dimension(125, 40));
@@ -86,8 +109,10 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jBtnObter3Aluno.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jBtnObter3Aluno.setText("<html> <center>Obter Aluno <br> 3 pos </center>"); // NOI18N
+        jBtnObter3Aluno.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnObter3Aluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnObter3Aluno.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnObter3Aluno.setText("<html> <center>\nObter Aluno \n<br>\nda 3ª Posição\n</center>"); // NOI18N
         jBtnObter3Aluno.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnObter3Aluno.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnObter3Aluno.setPreferredSize(new java.awt.Dimension(125, 40));
@@ -97,8 +122,10 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jBtnRemover.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jBtnRemover.setText("Remover (Ultimo)");
+        jBtnRemover.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnRemover.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnRemover.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnRemover.setText("<html> <center>Remover o <br>\n útimo cadastro\n</center>");
         jBtnRemover.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnRemover.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnRemover.setPreferredSize(new java.awt.Dimension(125, 40));
@@ -108,8 +135,10 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jBtnObterPU.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jBtnObterPU.setText("<html> <center> Obter Matricula  <br> primeiro e ultimo </center>");
+        jBtnObterPU.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnObterPU.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnObterPU.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnObterPU.setText("<html> <center> Obter Matrícula <br>do  primeiro e último aluno </center>");
         jBtnObterPU.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnObterPU.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnObterPU.setPreferredSize(new java.awt.Dimension(125, 40));
@@ -119,19 +148,24 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jBtnSalvar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jBtnSalvar.setText("Salvar CSV");
+        jBtnSalvar.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnSalvar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnSalvar.setText("Salvar em CSV");
         jBtnSalvar.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnSalvar.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnSalvar.setPreferredSize(new java.awt.Dimension(125, 40));
+        jBtnSalvar.setSelected(true);
         jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnSalvarActionPerformed(evt);
             }
         });
 
-        jBtnImprimirVelhoNovo.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jBtnImprimirVelhoNovo.setText("<html>\n<center>\nImprimir mais velho e mais novo\n</center>");
+        jBtnImprimirVelhoNovo.setBackground(new java.awt.Color(11, 111, 181));
+        jBtnImprimirVelhoNovo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnImprimirVelhoNovo.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnImprimirVelhoNovo.setText("<html>\n<center>\nImprimir o mais velho e\n<br>\n o mais novo\n</center>");
         jBtnImprimirVelhoNovo.setActionCommand("<html> <center> Imprimir mais velho  e mais novo </center>");
         jBtnImprimirVelhoNovo.setPreferredSize(new java.awt.Dimension(125, 40));
         jBtnImprimirVelhoNovo.addActionListener(new java.awt.event.ActionListener() {
@@ -140,8 +174,12 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
+        jBtnSair.setBackground(new java.awt.Color(11, 111, 181));
         jBtnSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBtnSair.setText("SAIR");
+        jBtnSair.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnSair.setText("SAIR DO SISTEMA");
+        jBtnSair.setBorderPainted(false);
+        jBtnSair.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBtnSair.setMaximumSize(new java.awt.Dimension(125, 40));
         jBtnSair.setMinimumSize(new java.awt.Dimension(125, 40));
         jBtnSair.setPreferredSize(new java.awt.Dimension(125, 40));
@@ -151,58 +189,176 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel1.setText("™");
+
+        jLabel3.setFont(new java.awt.Font("Consolas", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("_____________________________________________________________________________________");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel2.setText("Olá! Seja bem-vindo ao sistema Cadastre. Por favor, escolha as opções abaixo desejada.");
+
+        jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("<html> <center> Remova o último <br> cadastro da lista. </center>");
+
+        jLabel5.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("<html> <center> Cadastre o aluno inserindo <br> os dados solicitados. </center>");
+
+        jLabel6.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("<html> <center>Consulte um aluno e <br> verifique se já está na lista. </center>");
+
+        jLabel7.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("<html> <center> Insira um novo aluno na Terceira<br> posição da lista de cadastro </center>");
+
+        jLabel8.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("<html> <center> Verifique o terceiro aluno <br> cadastrado na lista. </center>");
+
+        jLabel9.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("<html> <center>Salve a lista de alunos cadastrados <br> em formato de arquivo CSV. </center>");
+
+        jLabel10.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("<html> <center> Consulte o aluno mais velho <br> e o mais novo cadastrados na lista. </center>");
+
+        jLabel11.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(224, 30, 33));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("<html> <center> Verifique o primeiro e o último <br> aluno cadastrado. </center>");
+
+        jLabel12.setFont(new java.awt.Font("Microsoft YaHei", 0, 11)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel12.setText("© Philipe Vieira, Ada Beatriz, Daniel Bricio.");
+
+        jLabel13.setFont(new java.awt.Font("Consolas", 1, 11)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(11, 111, 181));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("___________________________________________________________________________________________________________________________________________________________");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblMenu)
-                .addGap(115, 115, 115))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBtnImprimirVelhoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnObterPU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnObter3Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(30, 30, 30)
+                        .addComponent(lblMenu)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel1)
+                        .addGap(509, 509, 509)
+                        .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 960, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(430, 430, 430)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jBtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jBtnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(jBtnObter3Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jBtnImprimirVelhoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(jBtnObterPU, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(217, 217, 217))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(378, 378, 378))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblMenu)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnObter3Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBtnObterPU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBtnImprimirVelhoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel13)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel2)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnObter3Aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnImprimirVelhoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnObterPU, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5))
         );
 
         pack();
@@ -357,6 +513,19 @@ public class Menu extends javax.swing.JDialog {
     private javax.swing.JButton jBtnRemover;
     private javax.swing.JButton jBtnSair;
     private javax.swing.JButton jBtnSalvar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblMenu;
     // End of variables declaration//GEN-END:variables
 
