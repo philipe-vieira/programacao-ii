@@ -29,7 +29,7 @@ import javax.swing.JOptionPane;
 public class Main {
     /** 
     * Metodo para obter as matrículas do Primeiro e Ultimo alunos da Lista
-    * @param alunos ArrayList<Aluno> - Lista de alunos a ser manipulada
+    * @param alunos ArrayList - Lista de alunos a ser manipulada
     * @author Philipe
     */
     public static void obterPrimeiroUltimo(ArrayList<Aluno> alunos){
@@ -53,7 +53,7 @@ public class Main {
     
     /** 
     * Metodo para gerar o arquivo csv com os dados dos alunos
-    * @param alunos ArrayList<Aluno> - Lista de alunos a ser inseridos no arquivo
+    * @param alunos ArrayList - Lista de alunos a ser inseridos no arquivo
     * @author Philipe
     */
     public static void gerarCsv(ArrayList<Aluno> alunos){
@@ -79,7 +79,7 @@ public class Main {
        
     /** 
     * Metodo para imprimir o terceiro aluno cadastrado
-    * @param alunos ArrayList<Aluno> - Lista de alunos a ser manipulada
+    * @param alunos ArrayList - Lista de alunos a ser manipulada
     * @author ada
     */
     public static void imprimeTerceiro(ArrayList<Aluno> alunos){
@@ -100,7 +100,7 @@ public class Main {
     /** 
     * Metodo para gerar obter os dados do aluno mais velho e do mais novo
     * dentre os alunos cadastrados
-    * @param alunos ArrayList<Aluno> - Lista de alunos a ser manipulada
+    * @param aluno ArrayList - Lista de alunos a ser manipulada
     * @author Philipe
     */
     public static void obterMaisNovoEMaisVelho(ArrayList<Aluno> aluno){
@@ -129,8 +129,8 @@ public class Main {
     
     /**
      * Método para remoção do ultimo elemento da lista de alunos
-     * @param alunos ArrayList<Aluno> - Lista de alunos cadastrados
-     * @return ArrayList<Aluno>
+     * @param alunos ArrayList - Lista de alunos cadastrados
+     * @return ArrayList
      * @author Philipe
      */
     public static ArrayList<Aluno> removerUltimo(ArrayList<Aluno> alunos){

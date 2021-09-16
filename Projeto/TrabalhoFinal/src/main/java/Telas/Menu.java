@@ -13,7 +13,9 @@ public class Menu extends javax.swing.JDialog {
     public int escolha = 0;
 
     /**
-     * Construtor para criação de uma nova tela de menu
+     * Construtor para inicialização da tela de menu
+     * @param parent - Frame oai da Janela
+     * @param modal - booleano para validar janela modal
      */
     public Menu(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
